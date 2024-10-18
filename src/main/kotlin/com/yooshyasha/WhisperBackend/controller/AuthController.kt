@@ -14,6 +14,10 @@ class AuthController(private val jwtService: JwtService) {
 
     @PostMapping("/register")
     fun register(): ResponseEntity<Map<String, String>> {
+        /*
+        * Returned token. For use:
+        * HEADERS: Authorization: Bearer $token
+        */
         val user = User(
             id = UUID.randomUUID(),
             nickname = "User" + (1000..9999).random()
