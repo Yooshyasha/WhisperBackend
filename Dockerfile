@@ -1,16 +1,8 @@
-# Этап 1: Билд приложения
-FROM ghcr.io/railwayapp/nixpacks:ubuntu-1722297819 AS build
-
-# Установка Java
-RUN apt-get update && apt-get install -y openjdk-21-jdk && java -version
-
-
+FROM openjdk:21-jdk-slim AS build
 WORKDIR /app/
 COPY . /app/.
-
-RUN java -version
-
 RUN ./gradlew clean build -x check -x test
+
 
 # Этап 2: Создание минимального образа для запуска приложения
 FROM openjdk:21-jdk-slim
