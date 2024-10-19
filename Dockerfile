@@ -1,6 +1,8 @@
 # Этап 1: Билд приложения
 FROM gradle:8.2.1-jdk21 AS build
 
+RUN java -version
+
 # Устанавливаем рабочую директорию для сборки
 WORKDIR /app
 
