@@ -1,19 +1,16 @@
 # Этап 1: Билд приложения
-FROM gradle:8.2.1-jdk21 AS build
+FROM ghcr.io/railwayapp/nixpacks:ubuntu-1722297819 AS build
 
-ENV JAVA_HOME /usr/local/openjdk-21
-ENV PATH $JAVA_HOME/bin:$PATH
+# Установка Java
+RUN apt-get update && apt-get install -y openjdk-21-jdk
 
 RUN java -version
 
-# Устанавливаем рабочую директорию для сборки
-WORKDIR /app
 
-# Копируем исходный код и файлы сборки в контейнер
-COPY src/main/kotlin/com/yooshyasha/WhisperBackend/controller /app
+WORKDIR /app/
+COPY . /app/.
 
-# Собираем проект
-RUN gradle build --no-daemon
+RUN ./gradlew clean build -x check -x test
 
 # Этап 2: Создание минимального образа для запуска приложения
 FROM openjdk:21-jdk-slim
