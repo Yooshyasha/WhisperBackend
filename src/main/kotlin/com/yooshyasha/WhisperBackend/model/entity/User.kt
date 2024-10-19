@@ -1,8 +1,13 @@
 package com.yooshyasha.WhisperBackend.model.entity
 
+import jakarta.persistence.*
 import java.util.UUID
 
+@Entity
+@Table(name = "users")
 data class User (
-    val id: UUID,
-    val nickname: String
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: UUID = UUID.randomUUID(),
+
+    var nickname: String = "",
 )
