@@ -1,0 +1,3 @@
+[build]
+builder = "ghcr.io/railwayapp/nixpacks:ubuntu-1722297819"
+env = { "JAVA_HOME" = "/usr/lib/jvm/java-21-openjdk-amd64" }
