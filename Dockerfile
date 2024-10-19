@@ -1,6 +1,9 @@
 # Этап 1: Билд приложения
 FROM gradle:8.2.1-jdk21 AS build
 
+ENV JAVA_HOME /usr/local/openjdk-21
+ENV PATH $JAVA_HOME/bin:$PATH
+
 RUN java -version
 
 # Устанавливаем рабочую директорию для сборки
