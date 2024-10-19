@@ -2,13 +2,13 @@
 FROM ghcr.io/railwayapp/nixpacks:ubuntu-1722297819 AS build
 
 # Установка Java
-RUN apt-get update && apt-get install -y openjdk-21-jdk
-
-RUN java -version
+RUN apt-get update && apt-get install -y openjdk-21-jdk && java -version
 
 
 WORKDIR /app/
 COPY . /app/.
+
+RUN java -version
 
 RUN ./gradlew clean build -x check -x test
 
