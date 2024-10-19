@@ -1,7 +1,6 @@
 package com.yooshyasha.WhisperBackend.model.entity
 
 import jakarta.persistence.*
-import lombok.Data
 
 @Entity
 @Table(name = "messages")

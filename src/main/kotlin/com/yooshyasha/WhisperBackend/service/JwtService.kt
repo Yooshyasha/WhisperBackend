@@ -1,4 +1,4 @@
-package com.yooshyasha.WhisperBackend.security
+package com.yooshyasha.WhisperBackend.service
 
 import com.yooshyasha.WhisperBackend.model.entity.User
 import io.jsonwebtoken.Jwts

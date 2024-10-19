@@ -25,4 +25,14 @@ class UserService(
     fun getUser(userId: UUID) : User? {
         return userRepository.findById(userId).orElse(null)
     }
+
+    @Transactional
+    fun createUser(nickname: String) : User {
+         val user = User(
+            uuid = UUID.randomUUID(),
+            nickname = nickname,
+        )
+        saveUser(user = user)
+        return user
+    }
 }

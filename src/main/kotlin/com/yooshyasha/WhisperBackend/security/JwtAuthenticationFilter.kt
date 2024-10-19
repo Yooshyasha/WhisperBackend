@@ -1,5 +1,6 @@
 package com.yooshyasha.WhisperBackend.security
 
+import com.yooshyasha.WhisperBackend.service.JwtService
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
