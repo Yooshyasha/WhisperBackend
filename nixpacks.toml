@@ -1,6 +1,0 @@
-[build]
-language = "java"
-jvm_version = "21"
-
-[project]
-start = "java -jar build/libs/WhisperBackend-1.0.jar"
