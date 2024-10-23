@@ -9,6 +9,7 @@ data class User (
     @Id
     var uuid: UUID = UUID.randomUUID(),
 
+    @Column(unique = true)
     var nickname: String = "",
 
     @OneToMany(fetch = FetchType.LAZY)
