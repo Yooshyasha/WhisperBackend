@@ -40,4 +40,9 @@ class UserService(
         saveUser(user = user)
         return user
     }
+
+    @Transactional
+    fun getAllUsers() : List<User> {
+        return userRepository.findAll()
+    }
 }
