@@ -34,6 +34,7 @@ dependencies {
 	implementation("org.glassfish.jaxb:jaxb-runtime:4.0.5")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.postgresql:postgresql")
+	implementation("org.springframework.boot:spring-boot-starter-websocket")
 
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
