@@ -47,4 +47,15 @@ class UserController(
 
         return ResponseEntity.ok(user)
     }
+
+    @GetMapping("/getUser/nickname/{nickname}")
+    fun getUserByNickname(@PathVariable nickname: String) : ResponseEntity<User> {
+        val user = userService.getUser(nickname)
+
+        return if (user != null) {
+            ResponseEntity.ok(user)
+        } else {
+            ResponseEntity.notFound().build()
+        }
+    }
 }

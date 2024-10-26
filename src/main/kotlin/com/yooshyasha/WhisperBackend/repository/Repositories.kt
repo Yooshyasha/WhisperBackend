@@ -10,4 +10,6 @@ interface ChatRepository : JpaRepository<Chat, Long>
 
 interface MessageRepository : JpaRepository<Message, Long>
 
-interface UserRepository : JpaRepository<User, UUID>
+interface UserRepository : JpaRepository<User, UUID> {
+    fun findByNickname(nickname: String) : User?
+}
