@@ -13,7 +13,7 @@ class UserKeyService(private val userKeysRepository: UserKeysRepository) {
         userKeysRepository.save(userKey)
     }
 
-    fun getPublicKey(userId: Long): String? {
-        return userKeysRepository.findByUserId(userId)?.publicKey
+    fun getPublicKey(user: User): String? {
+        return userKeysRepository.findByUser(user)?.publicKey
     }
 }
